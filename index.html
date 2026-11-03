@@ -10,11 +10,12 @@
 
     <header>
         <h1>RezzOS</h1>
-        <div class="subtitle">A lightweight operating system with an emphasis on instant use, which uses the Linux kernel, using musl and busy box instead of the usual GNU util and glibc</div>
+        <div class="subtitle">A lightweight operating system with an emphasis on instant usability, powered by the Linux kernel, musl libc, and BusyBox.</div>
         <nav style="margin-top: 15px;">
-            <a href="https://rezzev.github.io/RezzOS">Home</a> &middot;
+            <a href="index.html">Home</a> &middot;
             <a href="https://github.com/Rezzev/RezzOS/releases">Download</a> &middot;
-            <a href="https://github.com/Rezzev/rezzos">Source Code</a> &middot;
+            <a href="documentation.html">Documentation</a> &middot;
+            <a href="https://github.com/Rezzev/RezzOS">Source Code</a>
         </nav>
     </header>
 
@@ -22,27 +23,44 @@
         <h2 style="margin-bottom: 15px;">Latest News</h2>
         
         <div class="news-item">
-            <div class="news-date mono">last week</div>
+            <div class="news-date mono">Last week</div>
             <div class="news-text">
                 <strong>RezzOS 1.7.4 released</strong><br>
-                    The built-in code editor has been updated, its own composer x11 has been added, as well as support for 1920x1080
-                <br><a href="https://github.com/Rezzev/RezzOS/releases/download/1.74/rezzos.iso">Download RezzOS</a>
+                The built-in code editor has been updated, a custom X11 compositor has been added, and 1920x1080 resolution is now supported.
+                <br><a href="https://github.com/Rezzev/RezzOS/releases/download/1.74/rezzos.iso">Download RezzOS ISO</a>
             </div>
         </div>
 
         <div class="news-item">
             <div class="news-date mono">2026-11-03</div>
             <div class="news-text">
-                <strong>New Package Manager</strong><br>
-                Added a full-fledged static batch meager apk
+                <strong>New Package Manager Integration</strong><br>
+                Added support for a fully static package manager based on Alpine's <span class="mono">apk</span>.
             </div>
         </div>
 
         <hr>
+
+        <!-- Новый большой блок с описанием -->
+        <h2 style="margin-bottom: 15px;">About RezzOS</h2>
+        
+        <p><strong>RezzOS</strong> is an independent, lightweight Linux distribution built from the ground up with a focus on simplicity, transparency, and performance. Unlike traditional distributions that carry decades of legacy code, RezzOS is designed to be minimal by default, providing an instant-use environment that doesn't sacrifice functionality.</p>
+        
+        <p>At its core, RezzOS relies on the <strong>musl C standard library</strong> and <strong>BusyBox core utilities</strong>. By avoiding the heavy footprint of <span class="mono">glibc</span> and GNU coreutils, we achieve significantly lower memory usage, faster boot times, and a much smaller attack surface. This makes RezzOS an ideal candidate for virtualization, containerization, embedded systems, and older hardware.</p>
+
+        <p>For process supervision and system initialization, RezzOS utilizes <strong>runit</strong>. The init system is entirely script-based, highly reliable, and incredibly fast, avoiding the complexities and overhead associated with modern service managers.</p>
+
+        <p>Package management in RezzOS is handled by a custom, fully static implementation of Alpine's <span class="mono">apk</span> package manager. This allows users to tap into Alpine's vast repositories of musl-compatible software while maintaining complete control over the system's binaries.</p>
+
+        <p>Our mission is to provide developers, power users, and enthusiasts with a clean, predictable, and hackable operating system. Whether you are building a custom appliance or simply want a fast desktop environment, RezzOS gives you exactly what you need—and nothing you don't.</p>
+        
+        <div style="margin-top: 20px;">
+            <a href="documentation.html" style="font-weight: bold;">&rarr; Read the full Documentation</a>
+        </div>
     </main>
 
     <footer>
-        &copy; 2026 The RezzOS Project. All code is licensed under the GPL License.
+        <p>&copy; 2026 The RezzOS Project. All code is licensed under the GPL License.</p>
     </footer>
 
 </body>
