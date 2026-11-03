@@ -83,3 +83,45 @@ footer {
     padding-top: 20px; 
     text-align: center; 
 }
+
+/* --- Стили для блока контрибьюторов --- */
+.contributors-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Расстояние между контрибьюторами */
+    margin-bottom: 30px;
+}
+
+.contributor {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-bottom: 1px dotted #ddd; /* Легкая линия-разделитель */
+    padding-bottom: 10px;
+}
+
+.contributor:last-child {
+    border-bottom: none;
+}
+
+.contributor-name {
+    flex: 0 0 180px; /* Фиксированная ширина для имен */
+    font-size: 1.05em;
+}
+
+.contributor-role {
+    flex: 1;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+/* На мобильных устройствах имя и роль будут идти друг под другом */
+@media (max-width: 600px) {
+    .contributor {
+        flex-direction: column;
+    }
+    .contributor-name {
+        margin-bottom: 5px;
+    }
+}
