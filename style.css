@@ -1,27 +1,85 @@
+/* Обновленный style.css */
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #fcfcfc; /* Почти белый */
-    color: #222;
+    background-color: #fcfcfc;
+    color: #333;
     line-height: 1.6;
     font-size: 16px;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
-a { color: #0000ee; text-decoration: none; }
-a:hover { text-decoration: underline; }
-header {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+
+a { 
+    color: #0055aa; /* Более благородный синий цвет */
+    text-decoration: none; 
 }
-h1 { font-size: 2.5em; font-weight: normal; letter-spacing: -1px; }
-.subtitle { color: #666; font-size: 1.1em; margin-top: 5px; }
-.mono { font-family: "Courier New", Courier, monospace; font-size: 0.9em; }
-.news-item { margin-bottom: 20px; }
-.news-date { color: #666; font-weight: bold; display: inline-block; width: 120px; vertical-align: top; }
-.news-text { display: inline-block; width: calc(100% - 130px); }
-hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
-footer { margin-top: 50px; font-size: 0.9em; color: #666; border-top: 1px solid #ccc; padding-top: 20px; text-align: center; }
+a:hover { 
+    text-decoration: underline; 
+}
+
+header {
+    border-bottom: 2px solid #333; /* Более строгая линия */
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+h1 { 
+    font-size: 2.8em; 
+    font-weight: 600; 
+    letter-spacing: -1px; 
+    margin-bottom: 5px;
+}
+
+.subtitle { 
+    color: #555; 
+    font-size: 1.1em; 
+    margin-bottom: 15px;
+}
+
+.mono { 
+    font-family: "Courier New", Courier, monospace; 
+    font-size: 0.9em;
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.news-item { 
+    margin-bottom: 25px; 
+}
+
+.news-date { 
+    color: #777; 
+    font-weight: bold; 
+    display: inline-block; 
+    width: 120px; 
+    vertical-align: top; 
+}
+
+.news-text { 
+    display: inline-block; 
+    width: calc(100% - 130px); 
+}
+
+hr { 
+    border: 0; 
+    border-top: 1px solid #ddd; 
+    margin: 30px 0; 
+}
+
+/* Стили для абзацев в блоке About */
+main p {
+    margin-bottom: 15px;
+    text-align: justify; /* Выравнивание по ширине для официального вида */
+}
+
+footer { 
+    margin-top: 50px; 
+    font-size: 0.9em; 
+    color: #666; 
+    border-top: 1px solid #ddd; 
+    padding-top: 20px; 
+    text-align: center; 
+}
