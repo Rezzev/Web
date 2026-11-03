@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RezzOS - The Independent musl Linux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>RezzOS</h1>
+        <div class="subtitle">A lightweight, independent Linux distribution built on musl, BusyBox and runit.</div>
+        <nav style="margin-top: 15px;">
+            <a href="index.html">Home</a> &middot;
+            <a href="downloads.html">Download</a> &middot;
+            <a href="https://github.com/yourusername/rezzos">Source Code</a> &middot;
+            <a href="docs/">Documentation</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="margin-bottom: 15px;">Latest News</h2>
+        
+        <div class="news-item">
+            <div class="news-date mono">2026-11-03</div>
+            <div class="news-text">
+                <strong>RezzOS 0.1-alpha released</strong><br>
+                The first public alpha version of RezzOS is now available. This release features a fully static apk-based package manager, custom initramfs, and runit services.
+                <br><a href="downloads.html">Download RezzOS 0.1-alpha</a>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <div class="news-date mono">2026-11-01</div>
+            <div class="news-text">
+                <strong>Migrating from XBPS to apk</strong><br>
+                After extensive testing, we have decided to use the Alpine package manager (apk) as the base for our package management. Read more in our blog.
+            </div>
+        </div>
+
+        <hr>
+
+        <h2 style="margin-bottom: 15px;">About RezzOS</h2>
+        <p>RezzOS is built from scratch with a focus on simplicity, security, and a fully static userland. We use <span class="mono">musl</span> as the C standard library, <span class="mono">BusyBox</span> for core utilities, and <span class="mono">runit</span> for process supervision. Packages are managed via our custom statically-linked <span class="mono">apk</span> implementation.</p>
+        <br>
+        <p>Our goal is to provide a minimal, highly customizable operating system for developers and power users who want full control over their environment.</p>
+    </main>
+
+    <footer>
+        &copy; 2026 The RezzOS Project. All code is licensed under the MIT License.
+    </footer>
+
+</body>
+</html>
