@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - RezzOS</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Подключаем библиотеку marked.js для рендеринга Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Дополнительные стили специально для документации -->
+    <style>
+        /* Ограничиваем ширину текста для удобства чтения */
+        #content {
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        
+        /* Стили для заголовков */
+        #content h1, #content h2, #content h3 {
+            font-weight: normal;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 8px;
+            color: #333;
+        }
+        #content h1 { font-size: 2.2em; margin-top: 0; border-bottom: 2px solid #333; }
+        #content h2 { font-size: 1.6em; }
+        #content h3 { font-size: 1.2em; border-bottom: none; font-weight: bold; }
+
+        /* Стили для текста и списков */
+        #content p { margin-bottom: 1.2em; text-align: justify; }
+        #content ul, #content ol { margin-bottom: 1.2em; margin-left: 25px; }
+        #content li { margin-bottom: 0.4em; }
+        
+        /* Стили для цитат и примечаний */
+        #content blockquote {
+            border-left: 4px solid #0055aa;
+            margin: 1.5em 0;
+            padding: 10px 15px;
+            color: #555;
+            background-color: #f8f8f8;
+            font-style: italic;
+        }
+
+        /* Стили для inline-кода (например, имен файлов) */
+        #content code {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+            color: #b30000; /* Немного выделяем код цветом */
+        }
+
+        /* Стили для блоков кода (как в терминале) */
+        #content pre {
+            background-color: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 4px;
+            padding: 16px;
+            overflow-x: auto;
+            margin-bottom: 1.5em;
+        }
+        
+        /* Сбрасываем стили inline-кода внутри блоков кода */
+        #content pre code {
+            background-color: transparent;
+            padding: 0;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        /* Ссылки внутри документации */
+        #content a {
+            color: #0055aa;
+            text-decoration: none;
+        }
+        #content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RezzOS Documentation</h1>
+        <nav style="margin-top: 15px;">
+            <a href="index.html">&larr; Back to Home</a> &middot;
+            <a href="https://github.com/Rezzev/RezzOS">Source Code</a> &middot;
+            <a href="https://github.com/Rezzev/RezzOS/issues">Report an Issue</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Сюда скрипт загрузит содержимое из documentation.md -->
+        <div id="content">
+            <p>Loading documentation...</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The RezzOS Project. All code is licensed under the GPL License.</p>
+    </footer>
+
+    <script>
+        // Скрипт для загрузки и парсинга Markdown
+        fetch('documentation.md')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(text => {
+                // Превращаем Markdown в HTML и вставляем в <div id="content">
+                document.getElementById('content').innerHTML = marked.parse(text);
+            })
+            .catch(error => {
+                // Если файл не найден или произошла ошибка
+                document.getElementById('content').innerHTML = `
+                    <div style="color: red; padding: 20px; border: 1px solid red; background: #ffeeee;">
+                        <h3>Error loading documentation</h3>
+                        <p>Could not load <code>documentation.md</code>. Make sure the file exists in the same directory as this HTML page.</p>
+                    </div>
+                `;
+                console.error('Error fetching markdown:', error);
+            });
+    </script>
+
+</body>
+</html>
